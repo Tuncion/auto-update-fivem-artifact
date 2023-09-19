@@ -1,0 +1,4 @@
+{
+    "UpdateChannel": "windows", // windows or linux
+    "ServerFilesPath": "C:/Users/XXX/Desktop/XXX/server" // Path to server files (where the citizen folder is located)
+}

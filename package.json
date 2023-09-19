@@ -1,0 +1,28 @@
+{
+  "name": "auto-update-fivem-artifact",
+  "description": "Auto Update your FiveM Artifact via official CDN",
+  "version": "1.0.0",
+  "author": "! Tuncion#0809",
+  "license": "GPL-3.0",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tuncion/auto-update-fivem-artifact.git"
+  },
+  "keywords": [
+    "fivem",
+    "auto-update"
+  ],
+  "bugs": {
+    "url": "https://github.com/Tuncion/auto-update-fivem-artifact/issues"
+  },
+  "homepage": "https://github.com/Tuncion/auto-update-fivem-artifact#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "comment-json": "^4.2.3",
+    "prompt-sync": "^4.2.0"
+  }
+}
