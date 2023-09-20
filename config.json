@@ -1,4 +1,5 @@
 {
     "UpdateChannel": "windows", // windows or linux
+    "UpdateTarget": "recommended", // latest or recommended | To update to a specific version use the version number (e.g. 6643)
     "ServerFilesPath": "C:/Users/XXX/Desktop/XXX/server" // Path to server files (where the citizen folder is located)
 }

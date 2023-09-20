@@ -1,7 +1,7 @@
 {
   "name": "auto-update-fivem-artifact",
   "description": "Auto Update your FiveM Artifact via official CDN",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "! Tuncion#0809",
   "license": "GPL-3.0",
   "main": "src/main.js",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Tuncion/auto-update-fivem-artifact#readme",
   "dependencies": {
     "axios": "^1.5.0",
+    "cheerio": "^1.0.0-rc.12",
     "comment-json": "^4.2.3",
     "prompt-sync": "^4.2.0"
   }
