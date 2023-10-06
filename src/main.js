@@ -1,10 +1,11 @@
 // 📂 Auto Update FiveM Artifacts
 // 📝 By: ! Tuncion#0809
-// 📝 Version: 1.0.0
-// 📝 Date: 19.08.2023
+// 📝 Version: 1.0.2
+// 📝 Date: 06.10.2023
 
 const fs = require('fs');
 const axios = require('axios');
+const zipdir = require(`zip-dir`);
 const cheerio = require('cheerio');
 const { exec } = require('child_process');
 const commentjson = require('comment-json');
@@ -81,6 +82,22 @@ axios.get(`https://runtime.fivem.net/artifacts/fivem/${UpdateChannel}/master/`).
         console.log('-------------------------------');
         console.log(`❌ Server Files Path not found: ${Config.ServerFilesPath}`);
         return input('👌 Press any key to exit...');
+    };
+
+    // Backup Artifact Data
+    console.log(`✅ Backing up artifact data`);
+    if (fs.existsSync(`${Config.ServerFilesPath}/citizen`) && Config.BackupSystem.Enabled) {
+        await zipdir(Config.ServerFilesPath, { saveTo: `${Config.BackupSystem.BackupPath}/Backup_v${OldVersion}.zip` });
+
+        // Delete old backups
+        if (Config.BackupSystem.DeleteOldBackup) {
+          console.log(`✅ Deleting old backups`);
+          const BackupFiles = fs.readdirSync(Config.BackupSystem.BackupPath);
+          BackupFiles.forEach((file) => {
+            const IsFile = fs.statSync(`${Config.BackupSystem.BackupPath}/${file}`).isFile();
+            if (!file.includes(OldVersion) && IsFile && file != 'readme') fs.unlinkSync(`${Config.BackupSystem.BackupPath}/${file}`);
+          });
+        };
     };
 
     // Delete current citizen folder

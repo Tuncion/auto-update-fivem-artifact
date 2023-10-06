@@ -1,5 +1,10 @@
 {
     "UpdateChannel": "windows", // windows or linux
     "UpdateTarget": "recommended", // latest or recommended | To update to a specific version use the version number (e.g. 6643)
-    "ServerFilesPath": "C:/Users/XXX/Desktop/XXX/server" // Path to server files (where the citizen folder is located)
+    "ServerFilesPath": "C:/Users/XXX/Desktop/XXX/server", // Path to server files (where the citizen folder is located)
+    "BackupSystem": { // Backup Artifact before updating
+        "Enabled": true, // true or false
+        "DeleteOldBackup": true, // Delete old backups (Only backup the last artifact)
+        "BackupPath": "./backup" // Path to backup folder
+    }
 }
