@@ -8,7 +8,7 @@ Create a Issue with the `bug` label if you have any issues. I will try to fix th
 Please make sure you have NodeJS installed on your machine. You can download it from [here](https://nodejs.org/en/download/).\
 **Do not update while the server is running. It will cause issues.**
 
-1. Run dependency.bat to install the dependencies.
+1. Run utils/your-os/dependency.* to install the dependencies.
 2. Edit the config.json file to your liking.
 3. Run the utils/your-os/start.* file to start the script.
 4. Enjoy! :)
