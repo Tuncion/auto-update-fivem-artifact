@@ -1,2 +1,11 @@
+# Installed Packages
 node_modules
 package-lock.json
+
+# Backup Folder
+!backup/readme
+backup
+
+# Temp Folder
+!temp/readme
+temp
