@@ -10,5 +10,5 @@ Please make sure you have NodeJS installed on your machine. You can download it 
 
 1. Run dependency.bat to install the dependencies.
 2. Edit the config.json file to your liking.
-3. Run the start.bat file to start the script.
+3. Run the utils/<your-os>/start.* file to start the script.
 4. Enjoy! :)
