@@ -1,8 +1,8 @@
 {
   "name": "auto-update-fivem-artifact",
   "description": "Auto Update your FiveM Artifact via official CDN",
-  "version": "1.0.1",
-  "author": "! Tuncion#0809",
+  "version": "1.0.3",
+  "author": "Tuncion",
   "license": "GPL-3.0",
   "main": "src/main.js",
   "scripts": {
