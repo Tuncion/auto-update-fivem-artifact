@@ -51,6 +51,7 @@ axios.get(`https://runtime.fivem.net/artifacts/fivem/${UpdateChannel}/master/`).
     if (!DownloadInternalID) {
       console.log('-------------------------------');
       console.log(`❌ Update target not found: ${Config.UpdateTarget}`);
+      if (Config.OnlyConsole) return; // Exit without prompt
       return input('👌 Press any key to exit...');
     };
 
@@ -64,6 +65,7 @@ axios.get(`https://runtime.fivem.net/artifacts/fivem/${UpdateChannel}/master/`).
     if (InternalData.ArtifactVersion == DownloadID) {
         console.log('-------------------------------');
         console.log(`❌ Artifact v${DownloadID} (${Config.UpdateTarget}) is already downloaded`);
+        if (Config.OnlyConsole) return; // Exit without prompt
         return input('👌 Press any key to exit...');
     };
 
@@ -72,6 +74,7 @@ axios.get(`https://runtime.fivem.net/artifacts/fivem/${UpdateChannel}/master/`).
     const DownloadResult = await DownloadFromURL(DownloadURL, './temp/fivem.tar.xz');
     if (!DownloadResult) {
         console.log(`❌ Error downloading file: ${DownloadURL}`);
+        if (Config.OnlyConsole) return; // Exit without prompt
         return input('👌 Press any key to exit...');
     };
     console.log(`✅ File downloaded and saved as fivem.tar.xz`);
@@ -81,6 +84,7 @@ axios.get(`https://runtime.fivem.net/artifacts/fivem/${UpdateChannel}/master/`).
     if (!fs.existsSync(Config.ServerFilesPath)) {
         console.log('-------------------------------');
         console.log(`❌ Server Files Path not found: ${Config.ServerFilesPath}`);
+        if (Config.OnlyConsole) return; // Exit without prompt
         return input('👌 Press any key to exit...');
     };
 
@@ -125,7 +129,7 @@ axios.get(`https://runtime.fivem.net/artifacts/fivem/${UpdateChannel}/master/`).
         console.log('-------------------------------');
         console.log(`✅ You updated artifact v${OldVersion} to v${DownloadID}\n`);
         console.log('⚠️\xa0 PLEASE RESTART YOUR FXSERVER TO APPLY THE CHANGES');
-        input('👌 Press any key to exit...');
+        if (!Config.OnlyConsole) input('👌 Press any key to exit...');
     });
 });
 
